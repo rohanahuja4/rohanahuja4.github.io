@@ -2,7 +2,12 @@ version: "3"
 
 services:
   nodejs:
-    # fill out the configuration here
+    build: .
+      # fill out the configuration here
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app
     networks:
       - app-network
 
@@ -28,7 +33,7 @@ volumes:
     driver_opts:
       type: none
       # fill out your absolute path to your folder here
-      device: /absolute/path/to/web/template/folder
+      device: /Users/rohanahuja/Documents/CMSC389T/rohanahuja4.github.io
       o: bind
 
 networks:
